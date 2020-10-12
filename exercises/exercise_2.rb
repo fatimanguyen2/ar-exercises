@@ -12,6 +12,6 @@ puts "----------"
 
 @store1 = Store.find_by(id: 1)
 @store2 = Store.find_by(id: 2)
-puts @store1.name
-puts @store2.name
+# puts @store1.name
+# puts @store2.name
 @store1.update(name: 'Aritzia')

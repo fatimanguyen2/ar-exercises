@@ -21,8 +21,9 @@ whistler = Store.create(name: "Whisler", annual_revenue: 19000000, mens_apparel:
 yaletown = Store.create(name: "Yaletown", annual_revenue: 430000, mens_apparel: true, womens_apparel: true)
 
 @mens_stores = Store.where(mens_apparel: true)
-@womens_stores = Store.where(womens_apparel: true).where("annual_revenue < ? ", 1000000)
+@womens_stores = Store.where("womens_apparel = true AND annual_revenue < ? ", 1000000)
+# @womens_stores = Store.where(womens_apparel: true).where("annual_revenue < ? ", 1000000)
 
- @mens_stores.each {|store| puts "#{store.name} makes #{store.annual_revenue}"}
- @womens_stores.each {|store| puts "#{store.name} makes #{store.annual_revenue}"}
+#  @mens_stores.each {|store| puts "#{store.name} makes #{store.annual_revenue}"}
+#  @womens_stores.each {|store| puts "#{store.name} makes #{store.annual_revenue}"}
 
